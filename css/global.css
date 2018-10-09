@@ -1,0 +1,135 @@
+body {
+	padding-top: 70px; /*keeps content from going behind 70 px nav bar */
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #c1c1c1;
+	border-bottom: 2px solid #4d4d4d;
+	height: 70px;
+	width: 100%;
+
+}
+
+nav {
+	text-align: right;
+
+}
+
+nav img { /* to put a border on the logo in the nav bar, this is going on the image, a opposed to the a tag, which is what is happening in the bit below */
+	border: 1px solid #c1c1c1; /* i chose c1c1c1 instead of white so you cant see it, if you don't want it, you would just pull this line of code out */
+}
+
+nav .logo { /* this is looking for the class 'logo' in the nav block */
+	float: left; /* this segment is specifically picking out the class logo and changing it */
+	padding: 5px 0 0 0;
+
+}
+
+nav a { /* this is looking for a's in the nav block */
+	display: inline-block;
+	padding: 25px 10px; /*anything you do to this piece will happen to the .logo, unless you tell the .logo to do something diff */
+	text-decoration: none;
+	color: #444;
+	text-transform: uppercase;
+
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto; /* 0 top, auto right, 0 bottom, auto left */
+}
+
+#hero {
+	width: 100%;
+	padding: 100px 0px;
+	text-align: center;
+	background: url(../images/dragonstone.jpg) top center no-repeat;
+		/* the ../ is telling it to look two folders back, before it starts looking for the folder called images */
+	background-size: cover;
+
+}
+
+#hero img { /* to put the border around the main image in the hero */
+	border: 1px solid #4d4d4d;
+}
+
+#hero h1 { /* calling out the h1 inside of the hero section */
+	color: #910000;
+	font-size: 36px;
+	padding: 10px;
+}
+
+#hero p { /* calling out the p tag inside of the hero section */
+	border: 1px solid black;
+	padding: 8px 0;
+	text-transform: uppercase;
+	color: black;
+	width: 180px; /* gives the box a fixed width */
+	margin: 0 auto; /* centers the box to the page */
+}
+
+#content h2 {
+	font-size: 30px;
+	text-align: center;
+	padding: 20px;
+}
+
+#content img { /* this causes the img to contain itself when you change the size of the window */
+	width: 50%;
+}
+
+.circle {
+	border-radius: 50%; /* this only works because the image is a square */
+}
+
+.centered { /* new class for the three center columns, to make their content centered*/
+	text-align: center;
+}
+
+.column {
+	float: left;
+	width: 33.3%; /* telling it to take up a 3rd of the page */
+	padding: 15px; /* padding is on trbl */
+	box-sizing: border-box; /* keeps all three columns in the same row, regardless of screen size */
+}
+
+section {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+
+/* when screen is less than 780px this css will take affect aka the mobile design */
+@media screen and (max-width: 780px) {
+
+	.column { /* changes how the columns appear when the screen is smaller. it also turns the three into a single column as the screen gets smaller */
+		width: 100%;
+	}
+
+	header {
+		height: auto;
+	}
+
+	nav div { /* looking for the div inside of the nav */
+		float: left;
+		clear: both;
+	}
+
+	nav { 
+		text-align: center;
+	}
+
+	nav .logo { /* looking for the little logo in the nav */
+		float: none;
+	}
+
+	#content h2 {
+		padding: 20px 0;
+		font-size: 22px;
+	}
+
+}
